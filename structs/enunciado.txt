@@ -1,0 +1,51 @@
+El programa se utiliza para administrar la información de una ferretería. Cada producto cuenta con un nombre, un
+precio y un vector de 12 enteros en donde se encuentra la cantidad vendida de ese producto en cada mes del año
+(siendo 0 enero y 11 diciembre).
+Dada la siguiente función main, se pide completar las funciones que faltan, de modo que el programa compile y
+funcione.
+Copie el código provisto sin modificarlo. Sólo descomente los llamados a función de cada punto a medida que
+vaya resolviendo, para testearlo.
+El código ya incluye datos de prueba y menciona los resultados esperados para esos datos, de manera que el
+usuario no tenga que ingresar datos para hacer las pruebas y con esto acelerar el desarrollo. Por supuesto, el
+programa debe funcionar para cualquier juego de datos futuro, no solamente con esta prueba específica.
+Tiene libertad para determinar cómo mostrar los resultados en pantalla, siempre que se verifique el resultado
+correcto.
+struct producto { char nombre[40]; float precio; int ventas_mes[12]; };
+#define CANT_PRODUCTOS 4
+int main() {
+struct producto ventas[CANT_PRODUCTOS];
+float aux = 0.0;
+/* PUNTO 1: Inicializar el vector de ventas_mes con ceros, para todos los productos */
+/* inicializar(ventas, CANT_PRODUCTOS); */
+/* ahora cargo algunos productos para poder trabajar, no modificar esto */
+strcpy(ventas[0].nombre, "Arandela");
+ventas[0].precio = 1.5;
+ventas[0].ventas_mes[0] = 300; /* cantidad de arandelas vendidas en enero */
+ventas[0].ventas_mes[5] = 100; /* cantidad de arandelas vendidas en junio */
+ventas[0].ventas_mes[11] = 50; /* cantidad de arandelas vendidas en diciembre */
+strcpy(ventas[1].nombre, "Tuerca");
+ventas[1].precio = 2.2;
+ventas[1].ventas_mes[0] = 200; ventas[1].ventas_mes[5] = 100; ventas[1].ventas_mes[11] = 50;
+strcpy(ventas[2].nombre, "Tornillo");
+ventas[2].precio = 3.5;
+ventas[2].ventas_mes[0] = 400; ventas[2].ventas_mes[5] = 200; ventas[2].ventas_mes[11] = 150;
+strcpy(ventas[3].nombre, "Tarugo");
+ventas[3].precio = 5.2;
+ventas[3].ventas_mes[0] = 500; ventas[3].ventas_mes[5] = 300; ventas[3].ventas_mes[11] = 250;
+/* PUNTO 2: Mostrar las ventas que tuvo un producto en todo el año, dado su nombre */
+/* Resultado esperado: Tornillo 750 unidades */
+/* mostrar_ventas_anio(ventas, CANT_PRODUCTOS, "Tornillo"); */
+/* PUNTO 3: Mostrar todos los productos en orden decreciente de precio (más caros primero). */
+/* Resultado esperado: Tarugo Tornillo Tuerca Arandela */
+/* mostrar_precio(ventas, CANT_PRODUCTOS); */
+/* PUNTO 4: Mostrar todos los productos en orden alfabético. */
+/* Resultado esperado: Arandela Tarugo Tornillo Tuerca */
+/* mostrar_alfabetico(ventas, CANT_PRODUCTOS); */
+/* PUNTO 5: Calcular y retornar el dinero total vendido en el año */
+/* Resultado esperado: $ 9530.00 */
+/* aux = calcular_ventas_totales(ventas, CANT_PRODUCTOS);
+printf("$ %.2f", aux); */
+/* PUNTO 6: Mostrar el nombre del producto más vendido (en cantidad) en el año */
+/* Resultado esperado: Tarugo 1050 unidades */
+/* mostrar_mas_vendido(ventas, CANT_PRODUCTOS); */
+}
